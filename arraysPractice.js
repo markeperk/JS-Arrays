@@ -64,14 +64,22 @@ var evenFinder = function(arr) {
 
 var nums = [1,2,34,54,55,34,32,11,19,17,54,66,13];
 var evens = [];
-var odds = []
+var odds = [];
 //Write a function called divider that is given three arguments, nums, evens, and odds.
 //Have divider return an Array with the first item in the array being the evens array (all the even values from nums) and the second item in the Array being the odds array(all the odd values from nums).
   //Code Here
 
-var divider = 
-
-
+var divider = function(nums) {
+  for (var i = 0; i < nums.length; i++) {
+    if (nums[i] % 2 === 0) {
+      evens.push(nums[i]);
+    }
+    else {
+      odds.push(nums[i]);
+    }
+  }
+  return newNums = [evens, odds];
+};
 
 //Next Problem
 var getRandomArbitrary = function() {
@@ -79,24 +87,29 @@ var getRandomArbitrary = function() {
 }
 var numbers = [0,3,4,5,6,7,9,14,17,24,25,26,29,30];
 //Above your given a function that will return a random number between 0 and 30, and an array full or numbers. Your job is to write a function named finder that will get a random number, then loop through the array to see if that random number is in the array. If it is, return true, if it's not, return false
-
   //Code Here
 
+var finder = function (arb) {
+  for (var i = 0; i < numbers.length; i++) {
+    if (arb === numbers[i]) {
+      return true;
+    }
+  }
+  return false;
+};
 
 //Next problem
 
-
-
 var str = 'this is my sentence';
 //Write a function called reverse that takes is given str as it's only argument and returns that string after it's been reversed
-
   //Code Here
 
+var reverse = function(str) {
+  var newStr = str.split("").reverse().join('');
+  return newStr;
+};
 
 //Next Problem
-
-
-var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 /*
   Here we're going to write a function that mimics going shopping and checking things off of our grocery list,
   and adding new items to our list. Write a function called removeItem that is given two arguments, the first is myGroceryList, and the
@@ -107,7 +120,21 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
   myGroceryList then return the new, updated grocery list.
 */
 
+var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
+
   //Code Here
+
+var removeItem = function(myGroceryList, rItem) {
+  for (var i = 0, i < myGroceryList.length, i++) {
+    if (rItem === myGroceryList[i]) {
+      myGroceryList.splice(i, 1);
+    }
+  }
+};
+
+var addItem = function(myGroceryList, aItem) {
+
+}
 
 //removeItem('chips') --> ['pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 //addItem('Jerky') --> ['pizza', 'hotpockets', 'MtnDew', 'corndogs', 'Jerky'];
