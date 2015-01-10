@@ -124,47 +124,62 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 
   //Code Here
 
-var removeItem = function(myGroceryList, rItem) {
-  for (var i = 0, i < myGroceryList.length, i++) {
-    if (rItem === myGroceryList[i]) {
-      myGroceryList.splice(i, 1);
+var removeItem = function(grocery, rItem) {
+  for (var i = 0; i < myGroceryList.length; i++) {
+    if(rItem === grocery[i]) {
+      grocery.splice(i, 1);
+      i--;
     }
   }
+  return grocery;
 };
 
-var addItem = function(myGroceryList, aItem) {
-
-}
+var addItem = function(grocery, aItem) {
+  var exists;
+  for (var i = 0; i < grocery.length; i++) {
+    if (aItem === grocery[i]) {
+      exists = true;
+    }
+  }
+    if (!exists) {
+        grocery.push(aItem);
+      }
+    return grocery;
+};
 
 //removeItem('chips') --> ['pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 //addItem('Jerky') --> ['pizza', 'hotpockets', 'MtnDew', 'corndogs', 'Jerky'];
 
-
-
 //Next Problem
-
-
 
 //Write a function called maker that creates an array, fills that array with numbers from 1 to 215, then returns the array.
-
   //Code Here
 
-
+var maker = function() {
+  var arr = [];
+  for (var i = 0; i < 215; i++) {
+    arr.push(i + 1);
+  }
+  return arr
+};
 
 //Next Problem
-
 
 var numbers = [5, '9', 16, 19, '25', '34', 48];
 //Write a function called addTen that is given 'numbers' as it's only argument and returns a new
 //array after adding ten to each item in numbers. *Verify your answer is correct. --> [15, 19, 26, 29, 35, 44, 58]
-
   //Code Here
 
-
+var addTen = function(num) {
+  var arr = [];
+  for (var i = 0; i < num.length; i++) {
+    newNum = Number(num[i]);
+    arr.push(newNum + 10);
+  }
+  return arr;
+};
 
 //Next Problem
-
-
 
 var num1 = Math.floor(Math.random() * (30 - 0) + 0);
 var num2 = Math.floor(Math.random() * (30 - 0) + 0);
@@ -181,10 +196,31 @@ for(var i = 0; i < num2; i++){
 
   //Code Here
 
+var x = function(arr1, arr2) {
+  var max = Math.max(arr1.length, arr2.length);
+  if (arr1.length === max) {
+    return "arr1 is longest";
+  }
+  else {
+    return "arr2 is longest"
+  }
+};
 
 /*As a continuation of the previous problem, write another function called 'both'.
   Your 'both' function will be given two arguments, arr1 and arr2 (from the previous example)
   'both' should return a new array full of numbers that are found in both arr1 and arr2.
 */
-
   //Code Here
+
+var both = function(arr1, arr2) {
+  var newAr = arr1.concat(arr2);
+  return newAr;
+};
+
+
+
+
+
+
+
+
